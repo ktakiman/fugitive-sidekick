@@ -1,4 +1,4 @@
-local getetVisualSelection = function()
+local getVisualSelection = function()
   local _, startLine, startCol, _ = unpack(vim.fn.getpos("'<"))
   local _, endLine, endCol, _ = unpack(vim.fn.getpos("'>"))
   print(startLine, startCol, endLine, endCol)
@@ -12,7 +12,7 @@ local getetVisualSelection = function()
 end
 
 local listFilesInCommit = function()
-  local cmdId = GetVisualSelection()
+  local cmdId = getVisualSelection()
   -- todo
   --   1. check if cmdId is in a form of commit id
   --   2. check register if cmdId is empty?
