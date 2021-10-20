@@ -1,24 +1,24 @@
-local getVisualSelection = function()
-  local _, startLine, startCol, _ = unpack(vim.fn.getpos("'<"))
-  local _, endLine, endCol, _ = unpack(vim.fn.getpos("'>"))
-  print(startLine, startCol, endLine, endCol)
+-- local getVisualSelection = function()
+--   local _, startLine, startCol, _ = unpack(vim.fn.getpos("'<"))
+--   local _, endLine, endCol, _ = unpack(vim.fn.getpos("'>"))
+--   print(startLine, startCol, endLine, endCol)
   
-  if startLine == endLine then
-    local line = vim.api.nvim_buf_get_lines(0, startLine - 1, startLine, true)[1]
-    if line == nil then
-      print('line is nil')
-      print(startLine, startCol, endLine, endCol)
-      return
-    end
-    print('line', line)
-    local selected = string.sub(line, startCol, endCol)
-    print('selected', selected)
-    return selected
-  end
-end
+--   if startLine == endLine then
+--     local line = vim.api.nvim_buf_get_lines(0, startLine - 1, startLine, true)[1]
+--     if line == nil then
+--       print('line is nil')
+--       print(startLine, startCol, endLine, endCol)
+--       return
+--     end
+--     print('line', line)
+--     local selected = string.sub(line, startCol, endCol)
+--     print('selected', selected)
+--     return selected
+--   end
+-- end
 
 local listFilesInCommit = function()
-  local cmdId = getVisualSelection()
+  local cmdId = vim.fn.getreg("0")
   print('cmdId', cmdId)
 
   if cmdId == nil then
