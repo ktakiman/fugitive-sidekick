@@ -1,12 +1,12 @@
 local getVisualSelection = function()
   local _, startLine, startCol, _ = unpack(vim.fn.getpos("'<"))
   local _, endLine, endCol, _ = unpack(vim.fn.getpos("'>"))
-  print(startLine, startCol, endLine, endCol)
+  -- print(startLine, startCol, endLine, endCol)
 
   if startLine == endLine then
     local line = vim.api.nvim_buf_get_lines(0, startLine - 1, startLine, true)[1]
     local selected = string.sub(line, startCol, endCol)
-    print(selected)
+    -- print(selected)
     return selected
   end
 end
