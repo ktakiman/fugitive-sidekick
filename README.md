@@ -6,6 +6,6 @@ https://github.com/tpope/vim-fugitive
 
 ## usage
 Currently, these three lua functions are exported to diff modified files in a commit
-1. listFilesInCommit - executes ":G difftool --name-only" in a new tab (commit id is fetched from visual selection)
+1. listFilesInCommit - executes ":G difftool --name-only" in a new tab (expects commit id is in register 0)
 2. diffNext - open next file in quickfix and executes "Gvdiffsplit !^"
 3. diffPrev - open previous file in quickfix and executes "Gvdiffsplit !^"
